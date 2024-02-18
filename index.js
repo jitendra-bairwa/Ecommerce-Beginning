@@ -25,4 +25,4 @@ productContainer.addEventListener('click', (event) => {
     }
 })
 
-createProductCard(products, productContainer);
+createProductCard(products, productContainer,findProductInCart,'products');
