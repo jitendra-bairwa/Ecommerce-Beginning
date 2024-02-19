@@ -38,8 +38,6 @@
   font-size: 2rem;
 }
 
-
-
 .card-vertical {
   width: 16rem;
 }
@@ -71,11 +69,30 @@
   gap: 8px;
 }
 
-.card-horizontal{
+.card-horizontal {
   width: 550px;
 }
 
+.price-strike-through,
+.discount {
+  font-size: 14px;
+}
 
+.main {
+  padding-top: 8rem;
+}
 
+.heading-2 {
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+}
 
+.final-price {
+  width: 25rem;
+  background-color: var(--card-background);
+  align-self: flex-start;
+}
 
+.justify-space-between {
+  justify-content: space-between;
+}
