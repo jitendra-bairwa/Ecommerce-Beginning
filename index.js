@@ -1,8 +1,9 @@
-import { createProductCard} from "./createProductCard.js";
+import { createProductCard } from "./createProductCard.js";
 import { products } from "./db/products.js";
 import { findProductInCart } from "./utils/findProductInCart.js";
 
 const productContainer = document.getElementById('products');
+const filterContainer = document.querySelector('.side-bar');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -25,4 +26,11 @@ productContainer.addEventListener('click', (event) => {
     }
 })
 
-createProductCard(products, productContainer,findProductInCart,'products');
+filterContainer.addEventListener('click', (event) => {
+    const updatedProducts = products.filter(({ rating }) => rating >= event.target.dataset.rating);
+    productContainer.innerHTML = "";
+    createProductCard(updatedProducts, productContainer, findProductInCart, 'products');
+
+})
+
+createProductCard(products, productContainer, findProductInCart, 'products');
